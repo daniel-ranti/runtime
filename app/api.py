@@ -4,7 +4,6 @@ import arrow
 import requests
 
 
-# TODO: take this out of text
 FORECAST_KEY = os.environ.get('FORECAST_KEY')
 TEMPLATE_URL = 'https://api.darksky.net/forecast/{key}/{lat},{lon}?exclude=minutely,daily,alerts,flags'
 
@@ -38,7 +37,6 @@ def get_best_times(lat, lon):
 	"""Returns the hourly data for the best 3 times to start your run today""" 
 	# TODO: make this more than just minimum temp bc that would suck in winter
 	# TODO: exclude middle of the night
-	# TODO: convert datetime
 	hourly_data = _get_hourly_data(lat, lon)
 	if not hourly_data:
 		return []
