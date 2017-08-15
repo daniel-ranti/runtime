@@ -13,4 +13,3 @@ Just an API endpoint at this point in time. Hit it with a lon and a lat query pa
 1. Get longitude and latitude by IP address
 1. Deploy to the hosting website
 1. Upload into a github repo
-1. 
