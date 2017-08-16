@@ -4,18 +4,17 @@ from flask import Flask, request, json, render_template
 import api 
 
 app = Flask(__name__)
+data_error='Please enter an address or location'
 
 
 @app.route('/', methods=['GET', 'POST'])
 def get_times():
     if request.method == 'POST':
         form_data = request.form 
-        lat = form_data.get('lat')
-        lon = form_data.get('lon')
-        if not (lon and lat):
-            # TODO: add an error code
-            return json.jsonify({'error':'must provide both lat and lon'})
-        best_times = api.get_best_times(lat, lon)
+        address_string = form_data.get('address_string')
+        if not address_string:
+            return render_template('form.html', data_error=data_error)
+        best_times = api.get_best_times(address_string)
         return render_template('form.html', best_times=best_times)
     else:
         return render_template('form.html')

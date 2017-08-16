@@ -10,10 +10,8 @@
       </div>
       <div id="main">
         <form method="post">
-          <label for="lat">Latitude:</label>
-          <input name="lat"><br />
-          <label for="lon">Longitude:</label>
-          <input name="lon"></input><br />
+          <label for="address_string">Address, Location, or Landmark:</label> 
+          <input name="address_string"></input>{% if data_error %}{{data_error}} {% endif %}<br />
           <input type="submit">
         </form>
       </div>

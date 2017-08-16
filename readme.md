@@ -12,8 +12,7 @@ http://whenshouldirun.com/
 
 1. Restrict the hours that one can recieve for run suggestions. 
 	1. build out the prediction algorithm: sliding scale for temperatures, humidity, wind gusts, etc
-1. fix the query in the first place because that shit is borked
+1. Include all the API keys as part of the environment variables: both API calls depend on darksky and google keys to be in os.environ()
 1. Build out a front end, so the user can input data and preferences 
 	1. familiarize with jinja templates!
 	1. clean up the output of the query
-1. Get longitude and latitude by IP address
