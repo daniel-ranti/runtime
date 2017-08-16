@@ -1,6 +1,9 @@
 runtime: python27
 api_version: 1
 threadsafe: true
+env_variables:
+  FORECAST_KEY: '2c9b74d1222b789e814fe96bb29eff3d'
+  GOOGLE_API_KEY: 'AIzaSyBxyp-XLAqcbZIQ4nG5q76xm18TIT6CH38'
 
 # [START handlers]
 handlers:

@@ -22,11 +22,11 @@ def _get_lat_lon(address_string):
 def _get_hourly_data(lat, lon):
 	"""hits the darksky API to return the hourly data for the next 24 hours"""
 	api_url = TEMPLATE_URL.format(key=FORECAST_KEY, lat=lat, lon=lon)
-	response = requests.get(api_url)
-	if not response.ok:
-		print 'DarkSky API requests returns status code {}'.format(response.status_code)
+	weather_response = requests.get(api_url)
+	if not weather_response.ok:
+		print 'DarkSky API requests returns status code {}'.format(weather_response.status_code)
 		return None
-	return response.json()['hourly']['data'][:24]
+	return weather_response.json()['hourly']['data'][:24]
 
 
 def _calc_runtime_score(weather_by_hour):
