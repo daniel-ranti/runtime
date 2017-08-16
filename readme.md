@@ -4,7 +4,9 @@
 
 # What can you do with it? 
 
-Just an API endpoint at this point in time. Hit it with a lon and a lat query param and it will return a list of forecast data by hour  
+Not really that much. Hit it with a lon and a lat query param and it will return a list of forecast data by hour. Well its supposed to. It doesnt work right now. 
+
+http://whenshouldirun.com/
 
 # To Do list:
 
