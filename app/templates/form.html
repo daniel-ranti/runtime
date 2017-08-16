@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Submit a form</title>
+   <link rel="stylesheet" type="text/css" href="/static/style.css">
+  </head>
+  <body>
+    <div id="container">
+      <div class="pagetitle">
+        <h1>Submit a form</h1>
+      </div>
+      <div id="main">
+        <form method="post">
+          <label for="lat">Latitude:</label>
+          <input name="lat"><br />
+          <label for="lon">Longitude:</label>
+          <input name="lon"></input><br />
+          <input type="submit">
+        </form>
+      </div>
+    </div>
+    {% if best_times %}
+      {% for best_time in best_times %}
+      <div>{{ best_time }}</div>
+      {% endfor %}
+    {% endif %}
+  </body>
+</html>
