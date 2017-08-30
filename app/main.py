@@ -3,8 +3,8 @@ from flask import Flask, request, json, render_template
 
 import api 
 
-app = Flask(__name__)
 data_error='Please enter an address or location'
+app = Flask(__name__)
 
 
 @app.route('/', methods=['GET', 'POST'])

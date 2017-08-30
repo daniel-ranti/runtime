@@ -5,15 +5,14 @@ import arrow
 import requests
 import geocoder
 
-
 FORECAST_KEY = os.environ.get('FORECAST_KEY')
-# Figure out how to get the google API key and the forecast key in the app environment
 TEMPLATE_URL = 'https://api.darksky.net/forecast/{key}/{lat},{lon}?exclude=minutely,daily,alerts,flags'
+
 
 def _get_lat_lon(address_string):
 	lat_lon_data = geocoder.google(address_string)
 	if not lat_lon_data.ok:
-		print 'Google API request returns status code{}'.format(lat_lon_data.error)
+		print 'Google API request returns error code: {}'.format(lat_lon_data.error)
 		return None
 	lat,lon = lat_lon_data.latlng
 	return lat,lon
@@ -46,7 +45,7 @@ def _convert_hourly_weather(weather_by_hour):
 
 def get_best_times(address_string):
 	"""Returns the hourly data for the best 3 times to start your run today""" 
-	lat,lon = _get_lat_lon(address_string)
+  	lat,lon = _get_lat_lon(address_string)
 	hourly_data = _get_hourly_data(lat, lon)
 	if not hourly_data:
 		return []
