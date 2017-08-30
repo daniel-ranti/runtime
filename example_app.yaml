@@ -1,0 +1,14 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+env_variables:
+  FORECAST_KEY: YOUR_KEY_HERE
+  GOOGLE_API_KEY: YOUR_KEY_HERE
+
+# [START handlers]
+handlers:
+- url: /static
+  static_dir: static
+- url: /.*
+  script: main.app
+# [END handlers]
